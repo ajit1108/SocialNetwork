@@ -2,7 +2,7 @@ import React from 'react';
 import { toast } from 'react-toastify';
 import { ToastComponent } from '../components/common'
 
-const BASE_URL = 'http://localhost:8000';
+const BASE_URL ="https://socialnetwork-i1kx.onrender.com";
 
 export default {
     getBaseUrl: () => {
