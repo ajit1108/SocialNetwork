@@ -1,5 +1,4 @@
-
-const BASE_URL ="https://socialnetwork-i1kx.onrender.com";
+const BASE_URL = 'https://socialnetwork-i1kx.onrender.com';
 
 const getAuthHeader = () => {
     const token = localStorage.getItem("token");
@@ -9,7 +8,7 @@ const getAuthHeader = () => {
         : {}
 }
 
-export default {
+const requester = {
     get: (endpoint, callback) => {
         return fetch(BASE_URL + endpoint, {
             method: 'GET',
@@ -91,6 +90,8 @@ export default {
             .then(callback)
     }
 }
+
+export default requester;
 
 function checkStatus(response) {
     if (response.status >= 200 && response.status < 300) {

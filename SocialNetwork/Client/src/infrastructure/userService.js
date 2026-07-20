@@ -2,9 +2,9 @@ import React from 'react';
 import { toast } from 'react-toastify';
 import { ToastComponent } from '../components/common'
 
-const BASE_URL ="https://socialnetwork-i1kx.onrender.com";
+const BASE_URL = 'https://socialnetwork-i1kx.onrender.com';
 
-export default {
+const userService = {
     getBaseUrl: () => {
         return BASE_URL;
     },
@@ -90,7 +90,8 @@ export default {
                 }
             } catch (err) {
                 localStorage.clear();
-                toast.error(<ToastComponent.errorToast text={'Unauthorized'} />, {
+                const ErrorToast = ToastComponent.errorToast;
+                toast.error(<ErrorToast text={'Unauthorized'} />, {
                     position: toast.POSITION.TOP_RIGHT
                 });
                 // throw new Error("Unauthorized");
@@ -173,4 +174,6 @@ export default {
 
         return '';
     }
-} 
+}
+
+export default userService;

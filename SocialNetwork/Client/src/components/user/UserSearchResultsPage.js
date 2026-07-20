@@ -9,7 +9,7 @@ import './css/UserFriends.css';
 import { connect } from 'react-redux';
 import {
     changeCurrentTimeLineUserAction, changeAllFriendsAction, addFriendAction,
-    cancelRequestAction, confirmRequestAction, removeFriendAction, searchResultsAction
+    cancelRequestAction, confirmRequestAction, removeFriendAction
 } from '../../store/actions/userActions';
 import { changeAllPicturesAction } from '../../store/actions/pictureActions';
 
@@ -43,12 +43,15 @@ class UserSearchResultsPage extends Component {
         const errorMessage = this.getErrorMessage(prevProps);
         const successMessage = this.getSuccessMessage(prevProps)
 
+        const ErrorToast = ToastComponent.errorToast;
+        const SuccessToast = ToastComponent.successToast;
+
         if (errorMessage) {
-            toast.error(<ToastComponent.errorToast text={errorMessage} />, {
+            toast.error(<ErrorToast text={errorMessage} />, {
                 position: toast.POSITION.TOP_RIGHT
             });
         } else if (successMessage) {
-            toast.success(<ToastComponent.successToast text={successMessage} />, {
+            toast.success(<SuccessToast text={successMessage} />, {
                 position: toast.POSITION.TOP_RIGHT
             });
         }

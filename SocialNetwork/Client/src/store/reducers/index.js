@@ -12,7 +12,7 @@ import { createPostReducer, fetchAllPostsReducer, removePostReducer, addLikePost
 import { createCommentReducer, removeCommentReducer, addLikeCommentReducer } from './commentReducer';
 import { fetchAllLogsReducer, findLogsByUserNameReducer, clearLogsByUserNameReducer, clearAllLogsReducer } from './logsReducer';
 
-export default {
+const rootReducer = {
     ajaxStatus: ajaxStatusReducer,
     ajaxError: ajaxErrorReducer,
     register: registerReducer,
@@ -55,3 +55,5 @@ export default {
     searchResults: searchResultsReducer,
     triggerMessageLoad: triggerMessageLoadReducer,
 };
+
+export default rootReducer;
