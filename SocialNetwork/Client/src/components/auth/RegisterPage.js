@@ -40,13 +40,13 @@ class RegisterPage extends Component {
 
     componentDidUpdate(prevProps, prevState){
         if (this.props.registerError.hasError && prevProps.registerError !== this.props.registerError) {
-            toast.error(<ToastComponent.errorToast text={this.props.registerError.message} />, {
+            toast.error(<ToastComponent.ErrorToast text={this.props.registerError.message} />, {
                 position: toast.POSITION.TOP_RIGHT
             });
         } else if (this.props.registerSuccess) {
             this.props.redirect();
 
-            toast.success(<ToastComponent.successToast text={this.props.registerMessage} />, {
+            toast.success(<ToastComponent.SuccessToast text={this.props.registerMessage} />, {
                 position: toast.POSITION.TOP_RIGHT
             });
 

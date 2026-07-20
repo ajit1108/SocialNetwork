@@ -90,7 +90,7 @@ const userService = {
                 }
             } catch (err) {
                 localStorage.clear();
-                const ErrorToast = ToastComponent.errorToast;
+                const ErrorToast = ToastComponent.ErrorToast;
                 toast.error(<ErrorToast text={'Unauthorized'} />, {
                     position: toast.POSITION.TOP_RIGHT
                 });

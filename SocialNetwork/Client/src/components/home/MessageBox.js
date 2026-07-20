@@ -91,11 +91,11 @@ class MessageBox extends Component {
         const successMessage = this.getSuccessMessage(prevProps, prevState)
 
         if (errorMessage) {
-            toast.error(<ToastComponent.errorToast text={errorMessage} />, {
+            toast.error(<ToastComponent.ErrorToast text={errorMessage} />, {
                 position: toast.POSITION.TOP_RIGHT
             });
         } else if (successMessage) {
-            toast.success(<ToastComponent.successToast text={successMessage} />, {
+            toast.success(<ToastComponent.SuccessToast text={successMessage} />, {
                 position: toast.POSITION.TOP_RIGHT
             });
         }
@@ -145,7 +145,7 @@ class MessageBox extends Component {
                         if (messageBody.fromUserId !== userService.getUserId()) {
                             const formattedUserNames = userService.formatUsername(messageBody.fromUserFirstName, messageBody.fromUserLastName)
 
-                            toast.info(<ToastComponent.infoToast text={`You have a new message from ${formattedUserNames}!`} />, {
+                            toast.info(<ToastComponent.InfoToast text={`You have a new message from ${formattedUserNames}!`} />, {
                                 position: toast.POSITION.TOP_RIGHT
                             });
 
@@ -169,13 +169,13 @@ class MessageBox extends Component {
                 });
             }
         }, () => {
-            toast.error(<ToastComponent.errorToast text={`Lost connection to ${this.serverUrl}. Refresh the page to reconnect.`} />, {
+            toast.error(<ToastComponent.ErrorToast text={`Lost connection to ${this.serverUrl}. Refresh the page to reconnect.`} />, {
                 position: toast.POSITION.TOP_RIGHT
             });
 
             //// Callback for automatically reconnecting to the server
             // setTimeout(() => {
-            //     toast.error(<ToastComponent.errorToast text={`Lost connection to ${this.serverUrl}. Trying to reconnect.`} />, {
+            //     toast.error(<ToastComponent.ErrorToast text={`Lost connection to ${this.serverUrl}. Trying to reconnect.`} />, {
             //         position: toast.POSITION.TOP_RIGHT
             //     });
             //     this.initializeWebSocketConnection();
@@ -216,7 +216,7 @@ class MessageBox extends Component {
         if (this.state.clientConnected) {
             this.sendMessage({ toUserId, content });
         } else {
-            toast.error(<ToastComponent.errorToast text={`StompClient is disconnected`} />, {
+            toast.error(<ToastComponent.ErrorToast text={`StompClient is disconnected`} />, {
                 position: toast.POSITION.TOP_RIGHT
             });
         }

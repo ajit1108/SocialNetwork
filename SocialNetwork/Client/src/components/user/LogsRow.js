@@ -30,16 +30,16 @@ export default class UserRow extends Component {
         requester.post('/users/promote?id=' + id, id, (response) => {
             if (response.success) {
                 this.setState({role: 'ADMIN'})
-                toast.success(<ToastComponent.successToast text={response.message} />, {
+                toast.success(<ToastComponent.SuccessToast text={response.message} />, {
                     position: toast.POSITION.TOP_RIGHT
                 });
             } else {
-                toast.error(<ToastComponent.errorToast text={response.message} />, {
+                toast.error(<ToastComponent.ErrorToast text={response.message} />, {
                     position: toast.POSITION.TOP_RIGHT
                 });
             }
         }).catch(err => {
-            toast.error(<ToastComponent.errorToast text={`Internal Server Error: ${err.message}`} />, {
+            toast.error(<ToastComponent.ErrorToast text={`Internal Server Error: ${err.message}`} />, {
                 position: toast.POSITION.TOP_RIGHT
             });
 
@@ -56,17 +56,17 @@ export default class UserRow extends Component {
         requester.post('/users/demote?id=' + id, id, (response) => {
             if (response.success) {
                 this.setState({role: 'USER'})
-                toast.success(<ToastComponent.successToast text={response.message} />, {
+                toast.success(<ToastComponent.SuccessToast text={response.message} />, {
                     position: toast.POSITION.TOP_RIGHT
                 });
             } else {
-                toast.error(<ToastComponent.errorToast text={response.message} />, {
+                toast.error(<ToastComponent.ErrorToast text={response.message} />, {
                     position: toast.POSITION.TOP_RIGHT
                 });
             }
 
         }).catch(err => {
-            toast.error(<ToastComponent.errorToast text={`Internal Server Error: ${err.message}`} />, {
+            toast.error(<ToastComponent.ErrorToast text={`Internal Server Error: ${err.message}`} />, {
                 position: toast.POSITION.TOP_RIGHT
             });
 

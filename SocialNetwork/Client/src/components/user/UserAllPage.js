@@ -46,11 +46,11 @@ class UserAllPage extends Component {
         const successMessage = this.getSuccessMessage(prevProps)
 
         if (errorMessage && !loading) {
-            toast.error(<ToastComponent.errorToast text={errorMessage} />, {
+            toast.error(<ToastComponent.ErrorToast text={errorMessage} />, {
                 position: toast.POSITION.TOP_RIGHT
             });
         } else if (successMessage && !loading) {
-            toast.success(<ToastComponent.successToast text={successMessage} />, {
+            toast.success(<ToastComponent.SuccessToast text={successMessage} />, {
                 position: toast.POSITION.TOP_RIGHT
             });
         }

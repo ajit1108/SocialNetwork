@@ -6,7 +6,7 @@ import Picture from './Picture';
 import './css/UserGallery.css';
 
 import { css } from '@emotion/core';
-import { RingLoader, GridLoader, MoonLoader, CircleLoader } from 'react-spinners';
+import { CircleLoader } from 'react-spinners';
 
 import { connect } from 'react-redux';
 import { changeCurrentTimeLineUserAction, changeAllFriendsAction } from '../../store/actions/userActions';
@@ -54,11 +54,11 @@ class UserGalleryPage extends Component {
         const successMessage = this.getSuccessMessage(prevProps)
 
         if (errorMessage) {
-            toast.error(<ToastComponent.errorToast text={errorMessage} />, {
+            toast.error(<ToastComponent.ErrorToast text={errorMessage} />, {
                 position: toast.POSITION.TOP_RIGHT
             });
         } else if (successMessage) {
-            toast.success(<ToastComponent.successToast text={successMessage} />, {
+            toast.success(<ToastComponent.SuccessToast text={successMessage} />, {
                 position: toast.POSITION.TOP_RIGHT
             });
         }
@@ -88,14 +88,14 @@ class UserGalleryPage extends Component {
         this.setState({ error: '', msg: '' });
 
         if (!this.state.file) {
-            toast.error(<ToastComponent.errorToast text='Please upload a file.' />, {
+            toast.error(<ToastComponent.ErrorToast text='Please upload a file.' />, {
                 position: toast.POSITION.TOP_RIGHT
             });
             return;
         }
 
         if (this.state.file.size >= 2000000) {
-            toast.error(<ToastComponent.errorToast text='File size exceeds limit of 2MB.' />, {
+            toast.error(<ToastComponent.ErrorToast text='File size exceeds limit of 2MB.' />, {
                 position: toast.POSITION.TOP_RIGHT
             });
             return;

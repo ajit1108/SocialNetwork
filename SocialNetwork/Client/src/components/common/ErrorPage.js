@@ -6,9 +6,6 @@ import './css/ErrorPage.css';
 import { userService } from '../../infrastructure'
 
 export default class ErrorPage extends Component {
-    constructor(props) {
-        super(props)
-    }
     render = () => {
         let isAuthenticated = userService.isAuthenticated();
         const errorClass = isAuthenticated ? '': 'error-page-content-section-unauthorized';

@@ -67,11 +67,11 @@ class HomePage extends Component {
         const successMessage = this.getSuccessMessage(prevProps)
 
         if (errorMessage) {
-            toast.error(<ToastComponent.errorToast text={errorMessage} />, {
+            toast.error(<ToastComponent.ErrorToast text={errorMessage} />, {
                 position: toast.POSITION.TOP_RIGHT
             });
         } else if (successMessage) {
-            toast.success(<ToastComponent.successToast text={successMessage} />, {
+            toast.success(<ToastComponent.SuccessToast text={successMessage} />, {
                 position: toast.POSITION.TOP_RIGHT
             });
         }

@@ -43,8 +43,8 @@ class UserSearchResultsPage extends Component {
         const errorMessage = this.getErrorMessage(prevProps);
         const successMessage = this.getSuccessMessage(prevProps)
 
-        const ErrorToast = ToastComponent.errorToast;
-        const SuccessToast = ToastComponent.successToast;
+        const ErrorToast = ToastComponent.ErrorToast;
+        const SuccessToast = ToastComponent.SuccessToast;
 
         if (errorMessage) {
             toast.error(<ErrorToast text={errorMessage} />, {

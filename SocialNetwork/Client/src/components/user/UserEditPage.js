@@ -70,7 +70,7 @@ class UserEditPage extends Component {
         const successMessage = this.getSuccessMessage(prevProps)
 
         if (errorMessage) {
-            toast.error(<ToastComponent.errorToast text={errorMessage} />, {
+            toast.error(<ToastComponent.ErrorToast text={errorMessage} />, {
                 position: toast.POSITION.TOP_RIGHT
             });
 
@@ -86,7 +86,7 @@ class UserEditPage extends Component {
                 backgroundImageUrl: this.props.timeLineUserData.backgroundImageUrl
             })
         } else if (successMessage) {
-            toast.success(<ToastComponent.successToast text={successMessage} />, {
+            toast.success(<ToastComponent.SuccessToast text={successMessage} />, {
                 position: toast.POSITION.TOP_RIGHT
             });
             this.props.history.push(`/home/profile/${this.state.id}`);
