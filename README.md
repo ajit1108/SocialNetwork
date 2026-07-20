@@ -18,7 +18,6 @@ Features:
 - Chat functionality: writing and receiving messages from your friends
 - Logs history
 
-
 **Admin Credentials:**
 - username: john
 - password: 1111
