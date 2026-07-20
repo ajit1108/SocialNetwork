@@ -69,7 +69,10 @@ public class PictureServiceImpl implements PictureService {
         }
 
         Picture picture = new Picture();
-        picture.setImageUrl(uploadMap.get("url").toString());
+        String imageUrl = (uploadMap.get("secure_url") != null) 
+                ? uploadMap.get("secure_url").toString() 
+                : uploadMap.get("url").toString();
+        picture.setImageUrl(imageUrl);
         picture.setUser(user);
         picture.setTime(LocalDateTime.now());
         picture.setCloudinaryPublicId(uploadMap.get("public_id").toString());

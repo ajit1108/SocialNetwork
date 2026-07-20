@@ -9,13 +9,13 @@ import java.util.HashMap;
 
 @Configuration
 public class ApplicationCloudConfiguration {
-    @Value("${cloudinary.cloud-name}")
+    @Value("${cloudinary.cloud-name:qmeqqvbd}")
     private String cloudApiName;
 
-    @Value("${cloudinary.api-key}")
+    @Value("${cloudinary.api-key:224948551932261}")
     private String cloudApiKey;
 
-    @Value("${cloudinary.api-secret}")
+    @Value("${cloudinary.api-secret:I3CezTTCgL6u20SZW8IiO9d1jVY}")
     private String cloudApiSecret;
 
     @Bean

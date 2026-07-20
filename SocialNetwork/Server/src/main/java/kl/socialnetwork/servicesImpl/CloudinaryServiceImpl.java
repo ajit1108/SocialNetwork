@@ -45,6 +45,8 @@ public class CloudinaryServiceImpl implements CloudinaryService {
                 .uploader()
                 .upload(fileToUpload, params);
 
+        fileToUpload.delete();
+
         return upload;
     }
 
