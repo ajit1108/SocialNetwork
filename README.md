@@ -18,7 +18,6 @@ Features:
 - Chat functionality: writing and receiving messages from your friends
 - Logs history
 
-The project is deployed on [Heroku](https://social-network-kl.herokuapp.com/).
 
 **Admin Credentials:**
 - username: john
