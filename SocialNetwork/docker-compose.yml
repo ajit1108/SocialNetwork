@@ -17,9 +17,9 @@ services:
       - db # This service depends on mysql. Start that first.
     environment: # Pass environment variables to the service
       # Datasource properties
-      SPRING_DATASOURCE_URL: jdbc:mysql://db:3306/social_network?useSSL=false&createDatabaseIfNotExist=true&serverTimezone=UTC
+      SPRING_DATASOURCE_URL: jdbc:mysql://tokaido.proxy.rlwy.net:23255/railway?useSSL=false&serverTimezone=UTC
       SPRING_DATASOURCE_USERNAME: root
-      SPRING_DATASOURCE_PASSWORD: root 
+      SPRING_DATASOURCE_PASSWORD: FhUxtSkPdjWTqpXjAkzwpiiyvKVOLQsy 
 
       # Cloudinary credentials
       CLOUDINARY_CLOUD_NAME: <enter_your_cloud_name>
